@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Redireccionar a la tienda de aplicaciones</title>
+  <title>Chick-fil-A ONE</title>
 </head>
 <body>
 
-<script type="text/javascript">
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+<script>
+  function detectAndRedirect() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-  // Primero verifica si es un dispositivo Huawei, ya que su userAgent también contiene "Android"
-  if (userAgent.includes("HUAWEI")) {
-    window.location.replace("https://appgallery.huawei.com/app/TU_ID_DE_APLICACION"); 
-  } else if (/android/i.test(userAgent)) {
-    window.location.replace("https://play.google.com/store/apps/details?id=com.chickfila.cfaflagship");
-  } else if (/iPad|iPhone|iPod/.test(userAgent)) {
-    window.location.replace("https://itunes.apple.com/us/app/chick-fil-a/id488818252");
-  } else {
-    // Si no se puede determinar el dispositivo, muestra un mensaje
-    document.write("No se pudo determinar el tipo de dispositivo. Por favor, visita la tienda de aplicaciones de tu dispositivo para descargar la app."); 
+    // Device detection
+ if (/android/i.test(userAgent)) {
+      // Redirect to Google Play Store for Android devices
+      window.location.replace("https://play.google.com/store/apps/details?id=com.chickfila.cfaflagship"); 
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      // Redirect to App Store for iOS devices
+      window.location.replace("https://itunes.apple.com/us/app/chick-fil-a/id488818252"); 
+    } else {
+      // Redirect to a specific website if the device is not detected
+      window.location.replace("https://www.chick-fil-a.com/");
+    }
+  }
+
+  // Error handling
+  try {
+    detectAndRedirect();
+  } catch (error) {
+    console.error("Error in redirection:", error);
+    // Optional: Display an error message to the user or redirect to an error page
   }
 </script>
 
