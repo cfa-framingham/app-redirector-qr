@@ -1,6 +1,6 @@
-# Chick-fil-A App Redirect
+# Chick-fil-A Framingham App Redirect Script
 
-This simple HTML page with JavaScript redirects users to the appropriate app store based on their device (Android, iOS, or Huawei). If the device cannot be determined, it redirects to the Chick-fil-A website.
+This JavaScript snippet redirects users to the appropriate Chick-fil-A app store based on their device (Android, iOS, or Huawei). If the device cannot be determined, it redirects to the Chick-fil-A website. This script is intended for use with a QR code to facilitate easy access to the app, specifically for the Chick-fil-A Framingham franchise as part of their "Chick-fil-A App Promotion" project.
 
 ## How it Works
 
@@ -11,27 +11,20 @@ The script detects the user's device by analyzing the `userAgent` string. It the
 * **Huawei:** AppGallery
 * **Unknown:** Chick-fil-A website
 
-## Installation
-
-1. **Copy the code:** Copy the contents of `index.html`.
-2. **Create an HTML file:** Create a new HTML file (e.g., `index.html`) and paste the code into it.
-3. **Replace placeholders:** 
-   * Replace `YOUR_APP_ID_HERE` with the actual App ID of the Chick-fil-A app in the Huawei AppGallery.
-   * If you want to redirect to a different website for unknown devices, change the URL in the `else` block.
-4. **Upload to web server:** Upload the `index.html` file to your web server or hosting service (e.g., GitHub Pages).
-
 ## Usage
 
-When users visit the page, they will be automatically redirected to the appropriate app store or website.
+1. **Integrate the script:**  Embed this script in your HTML file.
+2. **Generate QR Code:** Generate a QR code that links to the HTML file containing this script.
+3. **Distribute:** Distribute the QR code for customers of Chick-fil-A Framingham to scan.
 
 ## Error Handling
 
-The script includes a `try...catch` block to handle potential errors during the redirection process. You can customize the error handling to display a message to the user or redirect them to an error page.
+The script includes a `try...catch` block to handle potential errors during the redirection process.
 
 ## Security Considerations
 
-While this script is simple and doesn't handle sensitive information, it's always good to consider security best practices. This script validates the `userAgent` and ensures the page is served over HTTPS to protect the connection between the user and the server.
+This script validates the `userAgent` to improve accuracy. It is intended for use with HTTPS to ensure secure connections.
 
 ## License
 
-This project is licensed under the Mozilla Public License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Mozilla Public License 2.0 - see the [LICENSE](LICENSE) file for details. Permission to use, copy, modify, and/or distribute this software is granted exclusively for the Chick-fil-A Framingham franchise as part of the "Chick-fil-A App Promotion" project.
